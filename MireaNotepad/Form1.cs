@@ -65,6 +65,38 @@ namespace MireaNotepad
             // установка шрифта
             textBox1.Font = fontDialog1.Font;
         }
+
+        private void вставитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Paste();
+            }
+        }
+
+        private void копироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Copy();
+            }
+        }
+
+        private void вырезатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Cut();
+            }
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fontDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка шрифта
+            textBox1.Font = fontDialog1.Font;
+        }
     }
 
     class SavingFile //класс сохранения в файл
